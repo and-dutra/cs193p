@@ -18,10 +18,10 @@ struct ContentView: View {
                     self.viewModel.choose(card: card)
                 }
             }
-            .padding()
-            .font(Font.largeTitle)
-            .foregroundColor(Color.orange)
         }
+        .padding()
+        .font(Font.largeTitle)
+        .foregroundColor(Color.orange)
     }
 }
 
