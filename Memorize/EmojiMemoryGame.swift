@@ -9,8 +9,16 @@
 import SwiftUI
 
 class EmojiMemoryGame {
-    private var gameModel: MemoryGame<String> = MemoryGame<String>(numberOfPairs: 2)
+    private var gameModel: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
     
+    static func createMemoryGame() -> MemoryGame<String> {
+        let emojis: Array<String> = ["👻","🎃"]
+        
+        return MemoryGame<String>(numberOfPairsOfCards: 2) { pairIndex in
+            return emojis[pairIndex]
+        }
+    }
+        
     var cards: Array<MemoryGame<String>.Card> {
         gameModel.cards
     }
